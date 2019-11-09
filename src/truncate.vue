@@ -7,7 +7,7 @@
       <a
         v-if="text.length >= length"
         :class="actionClass"
-        @click="toggle()">{{ clamp }}</a>
+        @click.stop="toggle()">{{ clamp }}</a>
     </div>
     <div v-else-if="!show && type === 'html'">
       <span
@@ -16,14 +16,14 @@
       <a
         v-if="text.length >= length"
         :class="actionClass"
-        @click="toggle()">{{ clamp }}</a>
+        @click.stop="toggle()">{{ clamp }}</a>
     </div>
     <div v-if="show && type !== 'html'">
       <span>{{ text }}</span>
       <a
         v-if="text.length >= length"
         :class="actionClass"
-        @click="toggle()">{{ less }}</a>
+        @click.stop="toggle()">{{ less }}</a>
     </div>
     <div v-else-if="show && type === 'html'">
       <div
@@ -32,7 +32,7 @@
       <a
         v-if="text.length >= length"
         :class="actionClass"
-        @click="toggle()">{{ less }}</a>
+        @click.stop="toggle()">{{ less }}</a>
       <p v-else>
         {{ h2p(text) }}
       </p>
